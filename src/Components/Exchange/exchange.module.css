@@ -1,0 +1,70 @@
+.exchange{
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    gap: 20px;
+}
+
+h3{
+    margin: 10px 0;
+}
+
+.exchange span:last-child{
+    font-style: italic;
+    font-size: 14px;
+    color: grey;
+    align-self: end;
+}
+
+.calc, .resultForm{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.calc{
+    justify-content: space-between;
+    align-items:flex-end;
+}
+
+.calc .inputData, .calc .outputData{
+    width: 200px;
+}
+
+form{
+    display: flex;
+}
+
+input{
+    border: none;
+    background:none;
+    outline:none;
+    padding: 10px 0;
+    border-bottom: 1px solid silver;
+    font-size: 20px;
+    width: 200px;
+}
+
+select{
+    border: none;
+    background:none;
+    outline:none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.result{
+    padding: 10px 0;
+    border-bottom: 1px solid grey;
+    width: 200px;
+    font-size: 20px;
+}
+
+p{
+    margin: 0;
+}
+
+.changer{
+    font-size: 24px;
+    cursor: pointer;
+}
