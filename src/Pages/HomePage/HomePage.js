@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 
 import css from './homePage.module.css';
-import {currencyService} from "../../services";
-import {CurrentRates, Exchange, Loader} from "../../Components";
+import {currencyService} from '../../services';
+import {CurrentRates, Exchange, Loader} from '../../Components';
 
 const HomePage = () => {
 

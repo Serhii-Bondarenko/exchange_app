@@ -1,16 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 
 import css from './currentRates.module.css'
-import {Currency} from "../Currency/Currency";
-import {dateService} from "../../services";
+import {Currency} from '../Currency/Currency';
+import {dateFormatter} from '../../helper';
 
 const CurrentRates = ({rates}) => {
 
-    const [date, setDate] = useState(dateService());
-
-    useEffect(() => {
-        setDate(dateService());
-    }, [date])
+    let currentDate = dateFormatter();
 
     return (
         <div className={css.currentRates}>
@@ -22,7 +18,7 @@ const CurrentRates = ({rates}) => {
                 <p>Продаж</p>
             </div>
             <div className={css.currencyList}>
-                {rates.map(currency => <Currency key={currency.ccy} date={date} currency={currency}/>)}
+                {rates.map(currency => <Currency key={currency.ccy} date={currentDate} currency={currency}/>)}
             </div>
         </div>
     );

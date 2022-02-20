@@ -1,4 +1,4 @@
-export const dateService = () => {
+export const dateFormatter = () => {
 
     let day = new Date().getDate();
     if (day < 10) day = '0' + day;

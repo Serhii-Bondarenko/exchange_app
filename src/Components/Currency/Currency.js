@@ -1,6 +1,6 @@
 import React from 'react';
 
-import css from "./currency.module.css";
+import css from './currency.module.css';
 
 const Currency = ({date, currency: {ccy, buy, sale}}) => {
     return (
@@ -12,7 +12,6 @@ const Currency = ({date, currency: {ccy, buy, sale}}) => {
                 <p>{sale.slice(0, -2)}</p>
             </div>
             <hr/>
-
         </>
     );
 };

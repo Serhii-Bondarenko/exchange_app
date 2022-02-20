@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {useForm} from "react-hook-form";
+import {useForm} from 'react-hook-form';
 
 import css from './converterForm.module.css';
 
@@ -30,30 +30,29 @@ const ConverterForm = ({customRates}) => {
 
     // конвертер валют
     const converter = (e, number = null) => {
-        let cash = e?.target.value || number;
+        const cash = e?.target.value || number;
+        let result;
 
-        if (inValue.includes('UAH')) {
+        if (inValue === 'UAH') {
             const {sale} = customRates.find(value => value.ccy === outValue);
-            let reverseRes = cash / sale;
-            setValue('take', reverseRes.toFixed(2));
+            result = cash / sale;
+            setValue('take', result.toFixed(2));
 
-            return
+            return;
         }
 
         const {buy} = customRates.find(value => value.ccy === inValue);
-        let result = buy * cash;
+        result = buy * cash;
         setValue('take', result);
-
     }
 
     // запуск по зміні валюти
     const converterStart = () => {
-        converter(null, moneyCount)
+        converter(null, moneyCount);
     }
 
     // зміна покупка/продаж
     const swap = () => {
-
         reset({
             inputCurrency: outValue,
             outputCurrency: inValue
@@ -63,7 +62,7 @@ const ConverterForm = ({customRates}) => {
             setInSelectState(false);
             setOutSelectState(true);
 
-            return
+            return;
         }
 
         setInSelectState(true);

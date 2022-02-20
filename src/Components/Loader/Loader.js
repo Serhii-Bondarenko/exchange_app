@@ -5,7 +5,7 @@ import './loader.css';
 const Loader = () => {
     return (
         <div className={'wrap'}>
-            <div className="lds-dual-ring"></div>
+            <div className="lds-dual-ring"/>
         </div>
     );
 };
