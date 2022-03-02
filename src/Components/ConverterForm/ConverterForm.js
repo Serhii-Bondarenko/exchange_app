@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useForm} from 'react-hook-form';
 
 import css from './converterForm.module.css';
@@ -13,7 +13,7 @@ const ConverterForm = ({customRates}) => {
         register,
         watch,
         setValue,
-        reset
+        reset,
     } = useForm({
 
         defaultValues: {
@@ -26,7 +26,13 @@ const ConverterForm = ({customRates}) => {
 
     const inValue = watch('inputCurrency');
     const outValue = watch('outputCurrency');
-    const moneyCount = watch('give');
+    const giveMoney = watch('give');
+    const takeMoney = watch('take');
+
+    useEffect(() => {
+        converterStart();
+    }, [inValue]);
+
 
     // конвертер валют
     const converter = (e, number = null) => {
@@ -36,27 +42,27 @@ const ConverterForm = ({customRates}) => {
         if (inValue === 'UAH') {
             const {sale} = customRates.find(value => value.ccy === outValue);
             result = cash / sale;
-            setValue('take', result.toFixed(2));
+            setValue('take', Math.ceil(result));
 
             return;
         }
 
         const {buy} = customRates.find(value => value.ccy === inValue);
         result = buy * cash;
-        setValue('take', result);
+        setValue('take', result.toFixed(2));
     }
 
     // запуск по зміні валюти
-    const converterStart = () => {
-        converter(null, moneyCount);
-    }
+    const converterStart = () => converter(null, giveMoney);
 
     // зміна покупка/продаж
     const swap = () => {
         reset({
             inputCurrency: outValue,
             outputCurrency: inValue
-        }, {keepDefaultValues: true})
+        });
+
+        setValue('give', takeMoney);
 
         if (inSelectState && !outSelectState) {
             setInSelectState(false);
@@ -86,7 +92,7 @@ const ConverterForm = ({customRates}) => {
                 </div>
 
                 <div className={css.switch}>
-                    <i className="fas fa-exchange-alt" onClick={swap}></i>
+                    <i className="fas fa-exchange-alt" onClick={swap}/>
                 </div>
 
                 <div className={css.outputData}>

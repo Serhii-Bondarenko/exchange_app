@@ -12,10 +12,11 @@ const HomePage = () => {
     useEffect(() => {
         currencyService.getCurrentRates()
             .then(response => {
-                setRates([...response]);
+                const filteredRates = response.filter(currency => currency.ccy !== 'BTC');
+                setRates([...filteredRates]);
                 setLoading(false);
             })
-    }, [])
+    }, []);
 
     return (
         <div className='main'>
