@@ -78,35 +78,27 @@ const ConverterForm = ({customRates}) => {
     return (
         <>
             <form className={css.calc} onSubmit={handleSubmit}>
-
                 <div className={css.inputData}>
                     <p>Міняю</p>
-
                     <input type="number" {...register('give', {onChange: converter})}/>
-
                     <select disabled={inSelectState} {...register('inputCurrency')} onClick={converterStart}>
                         {customRates.map(value => <option key={value.ccy} value={value.ccy}>
                             {value.ccy}
                         </option>)}
                     </select>
                 </div>
-
                 <div className={css.switch}>
                     <i className="fas fa-exchange-alt" onClick={swap}/>
                 </div>
-
                 <div className={css.outputData}>
                     <p>Отримую</p>
-
                     <input type="number" {...register('take')} readOnly/>
-
                     <select disabled={outSelectState} {...register('outputCurrency')} onClick={converterStart}>
                         {customRates.map(value => <option key={value.ccy} value={value.ccy}>
                             {value.ccy}
                         </option>)}
                     </select>
                 </div>
-
             </form>
         </>
     );
