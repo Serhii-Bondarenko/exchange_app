@@ -1,0 +1,17 @@
+.header__nav-bar {
+  display: flex;
+  align-items: center;
+}
+.header__nav-bar img {
+  width: 64px;
+  height: 48px;
+  padding-right: 16px;
+}
+.header__nav-bar span {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=headerRow.css.map */

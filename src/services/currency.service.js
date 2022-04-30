@@ -1,12 +1,12 @@
-import {axiosService} from "./axios.service";
+import { axiosService } from './axios.service';
 import baseURL from '../config/urls';
 
 export const currencyService = {
-    getCurrentRates: () => axiosService.get(baseURL, {
+    getCurrentRates: (coursid) => axiosService.get(baseURL, {
         params: {
             json: 'json',
             exchange: 'exchange',
-            coursid: 5
+            coursid
         }
     }).then(response => response.data)
 }

@@ -1,0 +1,128 @@
+.calc .switch{
+    width: 56px;
+    height: 40px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    color: rgba(0, 0, 0, 0.54);
+    background: rgb(255, 255, 255);
+    box-shadow: rgb(0 0 0 / 12%) 0px 2px 4px 0px, rgb(0 0 0 / 12%) 0px 0px 4px 0px;
+}
+
+select, input{
+    outline: none;
+    border: none;
+    background: none;
+    font-weight: bold;
+}
+
+.switch, select{
+    cursor: pointer;
+}
+
+.calc {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 266px;
+    padding: 16px;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 12%) 0px 2px 4px 0px, rgb(0 0 0 / 12%) 0px 0px 4px 0px;
+    border-radius: 4px;
+    flex: 1 1 30%;
+
+    i{
+        font-size: 22px;
+        font-weight: 600;
+        transform: rotate(90deg);
+    }
+
+    select{
+        border-bottom: 1px rgba(0, 0, 0, 0.12) solid;
+        line-height: 1.5;
+        padding: 8px 24px;
+        color: rgb(0, 0, 0);
+    }
+
+    .switch{
+        margin-left: 24px;
+
+        &:hover{
+            color: black;
+            box-shadow: rgb(0 0 0 / 30%) 0px 2px 4px 0px, rgb(0 0 0 / 30%) 0px 0px 4px 0px;
+        }
+    }
+
+    input{
+        border-bottom: 1px rgba(0, 0, 0, 0.12) solid;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .exchange-action{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .inputCurrency, .outputCurrency{
+        display: flex;
+        justify-content: space-between;
+
+        @media (max-width: 700px) {
+            column-gap: 30px;
+        }
+    }
+
+    .cur-rate{
+        display: flex;
+        align-items: center;
+        padding: 8px;
+        font-size: 14px;
+        line-height: 22px;
+        background: rgba(0, 0, 0, 0.04);
+        border-radius: 2px;
+    }
+
+    @media (max-width: 1030px) {
+        flex: 0 1 60%;
+    }
+}
+
+//  border bottom animation
+
+.content{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.border{
+    display:inline-block;
+    width:0px;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    position: absolute;
+    -webkit-transition: all ease-in-out 0.3s;
+    -o-transition: all ease-in-out 0.3s;
+    transition: all ease-in-out 0.3s;
+}
+.in:hover,
+.in:active,
+.in:focus{
+    border: none;
+    outline: none;
+}
+
+.in:hover+.border,
+.in:focus+.border{
+    width: 100%;
+}
+
+.in:hover+.border{
+    background-color: black;
+}
+
+.in:focus+.border{
+    background-color: #8dc641;
+}

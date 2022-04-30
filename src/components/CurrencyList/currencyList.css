@@ -1,0 +1,74 @@
+.currency {
+  padding: 0 24px 24px;
+  border-radius: 2px;
+  background-color: white;
+  flex: 1 1 60%;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 4px 0px, rgba(0, 0, 0, 0.12) 0px 0px 4px 0px;
+}
+@media (max-width: 500px) {
+  .currency {
+    flex: 1 1 100%;
+    padding: 20px 10px;
+  }
+}
+
+.nav-bar ul {
+  display: flex;
+  column-gap: 24px;
+}
+@media (max-width: 500px) {
+  .nav-bar ul {
+    justify-content: space-between;
+  }
+}
+.nav-bar li {
+  padding: 24px 0 21px;
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  cursor: pointer;
+}
+.nav-bar li:hover {
+  border-bottom: 3px solid silver;
+}
+.nav-bar .active {
+  border-bottom: 3px solid #8dc641;
+  color: rgba(0, 0, 0, 0.87);
+}
+.nav-bar .active:hover {
+  border-bottom: 3px solid #8dc641;
+}
+
+.tb-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.currency-list .tb-header {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  background-color: #F5F5F5;
+  color: rgba(0, 0, 0, 0.54);
+  font-weight: bold;
+  padding: 8px;
+}
+.currency-list .tb-header p:first-child {
+  padding-left: 40px;
+  width: 120px;
+}
+@media (max-width: 500px) {
+  .currency-list .tb-header p:first-child {
+    width: 150px;
+  }
+}
+.currency-list .tb-header p:last-child {
+  padding-right: 40px;
+}
+@media (max-width: 500px) {
+  .currency-list .tb-header p:last-child {
+    padding: 0;
+  }
+}
+
+/*# sourceMappingURL=currencyList.css.map */

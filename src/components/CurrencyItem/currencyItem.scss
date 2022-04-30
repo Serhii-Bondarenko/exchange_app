@@ -1,0 +1,40 @@
+.tb-row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  font-size: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  &:hover{
+    transition: 0.3s;
+    background-color: #F5F5F5;
+  }
+  .cur-info{
+    display: flex;
+    width: 160px;
+    align-items: center;
+
+    p:last-child{
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.54);
+    }
+  }
+  .cur-name{
+    display: flex;
+    flex-direction: column;
+    row-gap: 13px;
+  }
+  img{
+    width: 24px;
+    height: 18px;
+    margin-right: 16px;
+  }
+  span{
+    padding-right: 40px;
+    
+    @media (max-width: 500px) {
+      padding-right: 10px;
+    }
+  }
+}

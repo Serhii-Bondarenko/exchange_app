@@ -1,17 +1,26 @@
-import {Route, Routes} from "react-router-dom";
+import React, { useEffect, useState } from 'react';
 
-import './App.css';
-import {HomePage} from "./Pages";
-import {Layout} from "./Components";
+import { Layout, Loader } from './components';
 
-function App() {
+const App = () => {
+
+  const [start, setStart] = useState(false);
+
+  useEffect(() => {
+    const preload = setTimeout(() => {
+      setStart(!start);
+    }, 1000);
+
+    return () => {
+      clearTimeout(preload);
+    }
+  }, [])
+
   return (
       <>
-          <Routes>
-              <Route path={'/'} element={<Layout/>}>
-                  <Route index element={<HomePage/>}/>
-              </Route>
-          </Routes>
+        {
+          !start ? <Loader/> : <Layout/>
+        }
       </>
   );
 }
