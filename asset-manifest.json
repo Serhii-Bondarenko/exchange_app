@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/exchange_app/static/css/main.376c3272.css",
+    "main.js": "/exchange_app/static/js/main.07373863.js",
+    "index.html": "/exchange_app/index.html",
+    "main.376c3272.css.map": "/exchange_app/static/css/main.376c3272.css.map",
+    "main.07373863.js.map": "/exchange_app/static/js/main.07373863.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.376c3272.css",
+    "static/js/main.07373863.js"
+  ]
+}
